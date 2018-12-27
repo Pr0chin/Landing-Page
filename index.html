@@ -53,7 +53,8 @@
 
   <div class="container-fluid d-flex align-items-center justify-content-center">
     <div class="row d-flex justify-content-center text-center mt-5">
-      <a href="index.html"> <img src="img/bike/b10.png" class="img-fluid"></a>
+      <a href="index.html"> <img src="img/bike/b10.png" id="imageAnimation" class="img-fluid"></a>
+      <script>$('#imageAnimation').addClass('animated bounceInDown');</script>
     </div>
   </div>
   <main>
@@ -70,9 +71,13 @@
             <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"
               style="margin-top: 2rem; background-color: #EC1B2E;">DOWNLOAD BROCHURE</button>
           </div>
-          <div class="mt-5">
-            <img src="img/icons/dropdownicon.png" class="img-fluid">
+          <div class="mb-3"></div>
+          <div class="container-fluid d-flex align-items-center justify-content-center">
+            <div class="row d-flex justify-content-center text-center">
+              <img src="img/icons/dropdownicon.png" id="imageAnimation" class="img-fluid blink">
+            </div>
           </div>
+          <div class="mb-5"></div>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -105,15 +110,16 @@
                     </div>
                   </form> -->
                   <form id="gform" method="POST" class="pure-form pure-form-stacked" data-email="from_email@example.com"
-                    action="https://script.google.com/macros/s/AKfycbxKFUyx0_o06PWs38mZAvLQoKfzJWhKGq1rCgGU/exec" onSubmit="return submitcheck(this);">
+                    action="https://script.google.com/macros/s/AKfycbxKFUyx0_o06PWs38mZAvLQoKfzJWhKGq1rCgGU/exec"
+                    onSubmit="return submitcheck(this);">
 
                     <div class="md-form">
-                      <input type="text" class="form-control" placeholder="Your First Name" name= "name" id="name">
+                      <input type="text" class="form-control" placeholder="Your First Name" name="name" id="name">
                     </div>
 
 
                     <div class="md-form">
-                      <input type="text" class="form-control" placeholder="Your Last Name" name= "lname" id="lname">
+                      <input type="text" class="form-control" placeholder="Your Last Name" name="lname" id="lname">
                     </div>
 
                     <div class="md-form">
@@ -123,7 +129,7 @@
                       <input type="text" class="form-control" placeholder="Your Contact Number" id="contact" name="contact">
                     </div>
                     <div class="modal-footer">
-                      <button class="btn btn-primary" onclick="sendEmailAndBdownlaod('download/demo.pdf','brousure.pdf')" >
+                      <button class="btn btn-primary" onclick="sendEmailAndBdownlaod('download/demo.pdf','brousure.pdf')">
                         <i class="fa fa-paper-plane"></i>&nbsp;Send
                       </button>
                       <button type="button" class="btn" data-dismiss="modal" style="background-color: #EC1B2E;">Close</button>
@@ -135,7 +141,7 @@
                     Copy-Right:&nbsp;&nbsp;<a style="color: aquamarine" onclick="privacyThankyou()">Privacy</a>
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div>

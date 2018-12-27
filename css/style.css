@@ -44,3 +44,16 @@ header,
 #mobileView {display: block;}
 
 }
+
+.blink{
+    font-size: 240px;
+    color: rgb (0, 137, 226);
+    animation: blink 1s infinite;
+ }
+
+ @keyframes blink{
+    0%{opacity: 1;}
+    75%{opacity: 1;}
+    76%{ opacity: 0;}
+    100%{opacity: 0;}
+ }
