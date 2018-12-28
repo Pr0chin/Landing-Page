@@ -58,3 +58,8 @@ header,
     76%{ opacity: 0;}
     100%{opacity: 0;}
  }
+
+ #privacyPolicyAlign{
+    text-align: justify;
+    text-justify: inter-word;
+ }
