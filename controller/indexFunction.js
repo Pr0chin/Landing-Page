@@ -8,10 +8,10 @@ function sendEmailAndBdownlaod(fileUrl, fileName) {
         this.validateForm(fileUrl, fileName, name, lname, email, contact);
     } else {
         var re = /^[0-9]*$/;
-            if (!re.test(contact)) {
-                document.getElementById('status').innerHTML = "Contact Number should Be In Numbers";
-                return false;
-            }
+        if (!re.test(contact)) {
+            document.getElementById('status').innerHTML = "Contact Number should Be In Numbers";
+            return false;
+        }
         re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (!re.test(email)) {
             document.getElementById('status').innerHTML = "Email format invalid";
@@ -73,7 +73,7 @@ function downloadBrochure(fileUrl, fileName) {
     document.body.appendChild(save);
     save.click();
     document.body.removeChild(save);
-    window.location.href = 'view/thankyou.html';
+    //window.location.href = 'view/thankyou.html';
 }
 
 function privacy() {
@@ -84,17 +84,29 @@ function privacyThankyou() {
     window.location.href = 'privacy.html'
 }
 
-function submitcheck(element)
-{
-var name = $('#name').val();
-var lname = $('#lname').val();
-var email = $('#email').val();
-var contact = $('#contact').val();
-if(name == "" || lname==""||email==""||contact==""){
-    alert("The action to execute is " + element.action);
-    return false;
-}else{
-    return true;
-}
- 
+function submitcheck(element) {
+    var name = $('#name').val();
+    var lname = $('#lname').val();
+    var email = $('#email').val();
+    var contact = $('#contact').val();
+
+    if (name == "" || lname == "" || email == "" || contact == "") {
+        
+        alert("The action to execute is " + element.action);
+        return false;
+    } else {
+        var re = /^[0-9]*$/;
+        if (!re.test(contact)) {
+            document.getElementById('status').innerHTML = "Contact Number should Be In Numbers";
+            return false;
+        }
+        re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!re.test(email)) {
+            document.getElementById('status').innerHTML = "Email format invalid";
+            return false;
+        }
+        window.open('view/thankyou.html', '_blank');
+        return true;
+    }
+
 }
